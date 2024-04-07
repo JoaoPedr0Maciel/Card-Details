@@ -29,6 +29,7 @@ const Input = ({
   return (
     <>
       <input
+        autoComplete="off"
         placeholder={placeholder}
         type={type}
         value={value}
