@@ -13,7 +13,7 @@ const ClientCard = () => {
   const schema = z.object({
     cardHolderName: z.string().min(1, "The name is required"),
     cardNumbers: z.string().min(19, "Type a valid card number"),
-    expiration: z.string().min(5, "Type a valid expiration"),
+    expiration: z.string().min(4, "Type a valid expiration"),
     cvc: z.string().min(3, "Type a valid cvc number"),
   });
 
@@ -117,6 +117,7 @@ const ClientCard = () => {
                 placeholder="Ex: 02/28"
                 id="exp"
                 maxLength={5}
+                minLength={4}
                 name="expiration"
                 error={errors.expiration?.message}
                 register={register}
@@ -148,7 +149,7 @@ const ClientCard = () => {
           </button>
         </form>
       ) : (
-        <div className="flex items-center justify-center py-5">
+        <div className="flex items-center justify-center">
           <Thanks name={cardHolderName} />
         </div>
       )}
